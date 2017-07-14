@@ -1,8 +1,3 @@
-/*!
- * aaaasualert
- * @license MIT
- */
- /*! aaaasualert */
 import box from './box.vue';
 
 var sualert = {
@@ -11,5 +6,4 @@ var sualert = {
         Vue.component('sualert', box);
     }
 }
-// window.sualert = sualert;
 export default sualert;

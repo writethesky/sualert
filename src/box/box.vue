@@ -1,5 +1,5 @@
 <template>
-<div v-bind:style="{fontSize: styles.fontSize, display: styles.display}" v-bind:class="showClass">
+<div v-bind:style="{fontSize: style.fontSize, display: style.display}" v-bind:class="showClass">
     <div class="stock-box">
         <div class="shade"></div>
         <div class="goods-pop-up">
@@ -8,10 +8,10 @@
             </div>
             <span class="close" v-on:click="hide">×</span>
             <div class="pop-up-body">
-                <div class="pop-up-txt" v-for="item in items_data">
-                    <span class="pop-up-left" :style="{width: styles.itemLeftTextWidth}">{{item.name}}</span>
+                <div class="pop-up-txt" v-for="item in items">
+                    <span class="pop-up-left" :style="{width: style.itemLeftTextWidth}">{{item.name}}</span>
                     <span class="pop-and">：</span>
-                    <span :style="{left: styles.itemLeftWidth}" class="pop-up-input">
+                    <span :style="{left: style.itemLeftWidth}" class="pop-up-input">
                         <input v-if="!item.type" type="text" name="" v-model:value="item.value" class="pop-up-input" >
                         <select v-if="item.type == 'select'" type="text" name="" v-model:value="item.value" class="pop-up-input" >
                             <option v-for="option in item.options" :value="option.value">{{option.text}}</option>
@@ -41,30 +41,31 @@
             };
         },
         props: ['title', 'items', 'styles', 'name'],
-        created(){
-            this.styles.fontSize = this.styles.fontSize ? this.styles.fontSize : '16px';
-            this.styles.itemLeftWidth = this.styles.itemLeftWidth ? this.styles.itemLeftWidth : '5em';
-            this.styles.itemLeftTextWidth = this.styles.itemLeftTextWidth ? this.styles.itemLeftTextWidth : "4em";
-            this.styles.display = this.styles.display ? this.styles.display : "none";
+        computed: {
+            style: function(){
+                var tmp_obj = {}
+                tmp_obj.fontSize = this.styles.fontSize ? this.styles.fontSize : '16px';
+                tmp_obj.itemLeftWidth = this.styles.itemLeftWidth ? this.styles.itemLeftWidth : '5em';
+                tmp_obj.itemLeftTextWidth = this.styles.itemLeftTextWidth ? this.styles.itemLeftTextWidth : "4em";
+                tmp_obj.display = this.styles.display ? this.styles.display : "none";
+                return tmp_obj;
+            }
 
 
-            this.items_data = this.items;
 
         },
         methods: {
             show(name){
-                console.log(this.styles.display);
-                this.styles.display = "block";
+                this.style.display = "block";
                 this.showClass = "show";
             },
             hide(){
                 this.showClass = "hide";
-                setTimeout(function(){
-                    this.styles.display = "none";
-                }, 1500);
+                var _this = this;
+                this.style.display = "none";
             },
             ok(){
-                this.$emit('ok', this.items_data);
+                this.$emit('ok', this.items);
             }
         }
  

@@ -23,9 +23,6 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: ['manifest'] // 指定公共 bundle 的名字。
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true
-        }),
         // new ExtractTextPlugin('styles.css'),
     ],
     module: {

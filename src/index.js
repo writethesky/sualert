@@ -16,4 +16,4 @@ var vm = new Vue({
 });
 
 
-console.log(vm.$refs.two.show());
+vm.$refs.two.show();

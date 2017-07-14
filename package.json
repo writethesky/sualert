@@ -1,6 +1,6 @@
 {
   "name": "sualert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "vue弹窗插件",
   "main": "dist/sualert.min.js",
   "author": "writethesky",
@@ -19,6 +19,10 @@
     "vue-template-compiler": "^2.3.4",
     "webpack": "^3.2.0",
     "webpack-dev-server": "^2.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/writethesky/sualert.git"
   },
   "scripts": {
     "start:dev": "webpack-dev-server --env=dev --progress --profile --colors",
