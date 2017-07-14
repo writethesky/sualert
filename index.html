@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>vue弹窗插件</title>
+    </head>
+    <body>
+        <div  id="app">
+            <sualert ref="one" title="弹窗插件" :styles="{fontSize: '1em'}" :items="[{name: '选项一'},{name: '选项二' }]" v-on:ok="ok"></sualert>
+            <sualert ref="two" title="弹窗插件" :styles="{fontSize: '1em'}" :items="[{name: '选项一'},{name: '选项二', type: 'select', options: [{text: '哈哈', value: 1}]}]" v-on:ok="ok"></sualert>
+
+        </div>
+    </body>
+</html>

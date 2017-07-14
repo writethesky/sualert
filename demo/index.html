@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+<body>
+<div id="app">
+    <sualert ref="one" title="弹窗插件" :styles="{fontSize: '1em'}" :items="[{name: '选项一'},{name: '选项二' }]" v-on:ok="ok"></sualert> 
+    <sualert ref="two" title="弹窗插件" :styles="{fontSize: '1em'}" :items="[{name: '选项一'},{name: '选项二', type: 'select', options: [{text: '哈哈', value: 1}]}]" v-on:ok="ok"></sualert>
+</div>
+<script type="text/javascript" src="vue.min.js"></script>
+<script type="text/javascript" src="../dist/sualert.min.js"></script>
+<script type="text/javascript">
+    Vue.use(sualert.default);
+    var vm = new Vue({
+      el: '#app',
+      data: {a: 111},
+        methods: {
+            ok(items){
+                console.log(items);
+            }
+        }
+    });
+vm.$refs.one.show();
+</script>
+</body>
+</html>
