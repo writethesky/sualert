@@ -12,8 +12,9 @@ var vm = new Vue({
         ok(items){
             console.log(items);
         },
-        changed(index, item){
-            console.log(index, item);
+        changed(index, items){
+            items[index].value = 8;
+            Vue.set(items, index, items[index]);
         }
     }
 });

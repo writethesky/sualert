@@ -1,6 +1,6 @@
 {
   "name": "sualert",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "vue弹窗插件",
   "main": "dist/sualert.min.js",
   "author": "writethesky",
@@ -14,9 +14,9 @@
     "grunt-babel": "^6.0.0",
     "grunt-contrib-uglify": "^3.0.1",
     "html-webpack-plugin": "^2.29.0",
-    "vue": "^2.3.4",
+    "vue": "^2.4.1",
     "vue-loader": "^13.0.1",
-    "vue-template-compiler": "^2.3.4",
+    "vue-template-compiler": "^2.4.1",
     "webpack": "^3.2.0",
     "webpack-dev-server": "^2.5.1"
   },

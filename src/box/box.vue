@@ -8,7 +8,7 @@
             </div>
             <span class="close" v-on:click="hide">×</span>
             <div class="pop-up-body">
-                <div class="pop-up-txt" v-for="(item, i) in items">
+                <div class="pop-up-txt" v-for="(item, i) in itemss">
                     <span class="pop-up-left" :style="{width: style.itemLeftTextWidth}">{{item.name}}</span>
                     <span class="pop-and">：</span>
                     <span :style="{left: style.itemLeftWidth}" class="pop-up-input">
@@ -37,7 +37,8 @@
     export default {
         data:function(){
             return {
-                showClass: ""
+                showClass: "",
+                itemss: []
             };
         },
         props: ['title', 'items', 'styles', 'name'],
@@ -49,6 +50,8 @@
                 tmp_obj.itemLeftTextWidth = this.styles.itemLeftTextWidth ? this.styles.itemLeftTextWidth : "4em";
                 tmp_obj.top = this.styles.top ? this.styles.top : "4em";
                 tmp_obj.display = this.styles.display ? this.styles.display : "none";
+
+                this.itemss = this.items;
                 return tmp_obj;
             }
 
@@ -56,20 +59,23 @@
 
         },
         methods: {
-            show(name){
+            show(){
                 this.style.display = "block";
                 this.showClass = "show";
             },
             hide(){
                 this.showClass = "hide";
-                var _this = this;
                 this.style.display = "none";
             },
             ok(){
+                this.itemss.push({});
                 this.$emit('ok', this.items);
             },
             changed(index){
-                this.$emit('changed', index, this.items[index]);
+                // this.items[0].value = 78;
+                // this.$set(this.items, 0, this.items[0]);
+
+                this.$emit('changed', index, this.items);
             }
         }
  

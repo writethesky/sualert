@@ -141,7 +141,7 @@ vm.$refs.one.show();
 |事件名|触发时机|返回值|说明|
 |--|--|--|--|
 |ok|当用户点击 保存 按钮时|items|对象为完整的items数组，数组内的每个对象，增加了一个 value属性，该属性为用户输入的值、或选中的值|
-|changed|当用户改变了item的值|index、item|index:为被改变的item在items中的索引，item:被改变的item，包含value属性|
+|changed|当用户改变了item的值|index、items|index:为被改变的item在items中的索引，items:同上|
 
 
 
