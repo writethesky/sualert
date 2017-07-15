@@ -11,6 +11,9 @@ var vm = new Vue({
     methods: {
         ok(items){
             console.log(items);
+        },
+        changed(index, item){
+            console.log(index, item);
         }
     }
 });

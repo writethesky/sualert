@@ -8,12 +8,12 @@
             </div>
             <span class="close" v-on:click="hide">×</span>
             <div class="pop-up-body">
-                <div class="pop-up-txt" v-for="item in items">
+                <div class="pop-up-txt" v-for="(item, i) in items">
                     <span class="pop-up-left" :style="{width: style.itemLeftTextWidth}">{{item.name}}</span>
                     <span class="pop-and">：</span>
                     <span :style="{left: style.itemLeftWidth}" class="pop-up-input">
-                        <input v-if="!item.type" type="text" name="" v-model:value="item.value" class="pop-up-input" >
-                        <select v-if="item.type == 'select'" type="text" name="" v-model:value="item.value" class="pop-up-input" >
+                        <input v-if="!item.type" type="text" name="" v-model:value="item.value" class="pop-up-input" v-on:keyup="changed(i)" v-on:keydown="changed(i)">
+                        <select v-if="item.type == 'select'" type="text" name="" v-model:value="item.value" class="pop-up-input" v-on:change="changed(i)" >
                             <option v-for="option in item.options" :value="option.value">{{option.text}}</option>
                         </select>
                     </span>
@@ -67,6 +67,9 @@
             },
             ok(){
                 this.$emit('ok', this.items);
+            },
+            changed(index){
+                this.$emit('changed', index, this.items[index]);
             }
         }
  
