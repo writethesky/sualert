@@ -2,7 +2,7 @@
 <div v-bind:style="{fontSize: style.fontSize, display: style.display}" v-bind:class="showClass">
     <div class="stock-box">
         <div class="shade"></div>
-        <div class="goods-pop-up">
+        <div class="goods-pop-up" v-bind:style="{top: style.top}">
             <div class="pop-up-head">
                 <span>{{title}}</span>
             </div>
@@ -47,6 +47,7 @@
                 tmp_obj.fontSize = this.styles.fontSize ? this.styles.fontSize : '16px';
                 tmp_obj.itemLeftWidth = this.styles.itemLeftWidth ? this.styles.itemLeftWidth : '5em';
                 tmp_obj.itemLeftTextWidth = this.styles.itemLeftTextWidth ? this.styles.itemLeftTextWidth : "4em";
+                tmp_obj.top = this.styles.top ? this.styles.top : "4em";
                 tmp_obj.display = this.styles.display ? this.styles.display : "none";
                 return tmp_obj;
             }

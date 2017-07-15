@@ -121,6 +121,7 @@ vm.$refs.one.show();
 |fontSize|string|16px|基础字体大小。可以使用em、rem等单位，基础字体大小决定弹窗的大小，字号越大，弹窗越大|
 |itemLeftWidth|string|5em|内容项左侧的长度|
 |itemLeftTextWidth|string|4em|内容项左侧文字部分（不包括“：”）的长度|
+|top|string|4em|弹窗距屏幕顶端的距离|
 |display|string|none|弹窗默认显示隐藏，none：隐藏，block：显示，如果设置位none，可以通过js api 来使其显示|
 
 #### items参数详解
