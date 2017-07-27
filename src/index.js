@@ -20,4 +20,4 @@ var vm = new Vue({
 });
 
 
-vm.$refs.two.show();
+vm.$refs.one.show();

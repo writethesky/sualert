@@ -68,7 +68,6 @@
                 this.style.display = "none";
             },
             ok(){
-                this.itemss.push({});
                 this.$emit('ok', this.items);
             },
             changed(index){
