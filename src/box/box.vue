@@ -13,6 +13,7 @@
                     <span class="pop-and">：</span>
                     <span :style="{left: style.itemLeftWidth}" class="pop-up-input">
                         <input v-if="!item.type" type="text" name="" v-model:value="item.value" class="pop-up-input" v-on:blur="changed(i)">
+                        <input v-if="item.type == 'password'" type="password" name="" v-model:value="item.value" class="pop-up-input" v-on:blur="changed(i)">
                         <select v-if="item.type == 'select'" type="text" name="" v-model:value="item.value" class="pop-up-input" v-on:change="changed(i)" >
                             <option v-for="option in item.options" :value="option.value">{{option.text}}</option>
                         </select>

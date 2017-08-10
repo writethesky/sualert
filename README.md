@@ -128,7 +128,7 @@ vm.$refs.one.show();
 |参数名|数据类型|说明|
 |--|--|--|
 |name|string|内容项名称|
-|type|string|内容项类型，默认为 input文本输入框，select：select下拉框|
+|type|string|内容项类型，默认为 input文本输入框，select：select下拉框, password: 密码输入框|
 |options|array|当type=select时，options为select的option选项配置|
 
 #### options参数详解
